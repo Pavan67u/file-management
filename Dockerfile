@@ -1,4 +1,4 @@
-FROM php:8.2-cli
+FROM php:8.2-apache
 
 # Install required PHP extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql
@@ -14,19 +14,25 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
+
 # Set working directory
-WORKDIR /app
+WORKDIR /var/www/html
 
 # Copy application files
-COPY . /app
+COPY . /var/www/html
 
-# Create necessary directories and make start script executable
-RUN mkdir -p /app/file_storage /app/logs \
-    && chmod -R 777 /app/file_storage /app/logs \
-    && chmod +x /app/start.sh
+# Create necessary directories
+RUN mkdir -p /var/www/html/file_storage /var/www/html/logs \
+    && chmod -R 777 /var/www/html/file_storage /var/www/html/logs \
+    && chown -R www-data:www-data /var/www/html
+
+# Configure Apache to listen on PORT env variable
+RUN sed -i 's/80/${PORT}/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
 
 # Expose port
 EXPOSE 8080
 
-# Start using shell script
-CMD ["/bin/bash", "/app/start.sh"]
+# Start Apache
+CMD ["apache2-foreground"]
