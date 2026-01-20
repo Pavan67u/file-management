@@ -1,0 +1,18 @@
+*.log
+*.tmp
+*.bak
+vendor/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Exclude sitepro folder
+sitepro/
+
+# User uploads (stored on server)
+file_storage/user_*
+file_storage/.versions/
+file_storage/.thumbs/
+
+# Logs
+logs/*.log

@@ -1,0 +1,208 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 20px;
+    padding: 0 20px;
+}
+/* Header */
+h1 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+/* Links */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    margin: 0 5px;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #007BFF;
+    transition: background-color 0.3s ease;
+}
+.button:hover {
+    background-color: #0056b3;
+}
+.delete-button {
+    background-color: #FF0000;
+}
+.delete-button:hover {
+    background-color: #CC0000;
+}
+/* General Button Styles */
+.button, nav ul li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white; /* Explicit text color */
+    background-color: #007BFF; /* Default background color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Hover State */
+.button:hover, nav ul li a:hover {
+    background-color: #0056b3; /* Darker background for hover */
+    color: white; /* Ensure text remains visible */
+}
+/* Navigation Menu Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: #007BFF; /* Navigation bar color */
+    padding: 10px;
+    border-radius: 5px;
+}
+nav ul li {
+    margin-right: 10px;
+}
+nav ul li a {
+    padding: 10px 15px;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    text-decoration: none; /* Prevent underline on hover */
+}
+/* Fix Button Visibility */
+.button.delete-button {
+    background-color: #FF0000; /* Red background for delete */
+}
+.button.delete-button:hover {
+    background-color: #CC0000; /* Darker red on hover */
+}
+/* Navigation Menu Styling */
+nav ul {
+    list-style: none;
+    display: flex;
+    background-color: #007BFF;
+    padding: 10px;
+    border-radius: 5px;
+}
+nav ul li {
+    margin-right: 10px;
+}
+nav ul li a {
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+nav ul li a:hover {
+    background-color: #0056b3;
+    border-radius: 5px;
+}
+/* File List */
+ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+li:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+li a {
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+/* Forms */
+form {
+    margin: 20px 0;
+}
+input[type="file"], input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+button {
+    display: inline-block;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+/* Search Form */
+.search-form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-form input[type="text"] {
+    margin-right: 10px;
+}
+.search-form button {
+    cursor: pointer;
+}
+/* General Container */
+.container {
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* User Info */
+.user-info {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+/* Message Styling */
+.message {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e6ffe6;
+    color: green;
+}
+.message.error {
+    background-color: #ffe6e6;
+    color: red;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    ul {
+        padding: 0;
+    }
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    input, button {
+        width: 100%;
+    }
+}

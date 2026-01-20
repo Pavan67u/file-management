@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["php82", "php82Extensions.mysqli", "php82Extensions.pdo_mysql", "php82Extensions.gd", "php82Extensions.zip", "php82Extensions.fileinfo"]
+
+[phases.build]
+cmds = ["mkdir -p /app/file_storage", "mkdir -p /app/logs"]
+
+[start]
+cmd = "php -S 0.0.0.0:${PORT:-8080} -t ."
