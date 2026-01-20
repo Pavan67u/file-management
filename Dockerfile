@@ -20,12 +20,13 @@ WORKDIR /app
 # Copy application files
 COPY . /app
 
-# Create necessary directories
+# Create necessary directories and make start script executable
 RUN mkdir -p /app/file_storage /app/logs \
-    && chmod -R 777 /app/file_storage /app/logs
+    && chmod -R 777 /app/file_storage /app/logs \
+    && chmod +x /app/start.sh
 
 # Expose port
 EXPOSE 8080
 
-# Start PHP built-in server using shell to expand $PORT
-CMD php -S 0.0.0.0:${PORT:-8080}
+# Start using shell script
+CMD ["/bin/bash", "/app/start.sh"]
