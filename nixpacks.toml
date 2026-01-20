@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["php83", "php83Extensions.mysqli", "php83Extensions.pdo_mysql", "php83Extensions.gd", "php83Extensions.zip", "php83Extensions.fileinfo", "php83Extensions.mbstring"]
-
-[phases.build]
-cmds = ["mkdir -p file_storage", "mkdir -p logs", "chmod -R 777 file_storage", "chmod -R 777 logs"]
-
-[start]
-cmd = "php -S 0.0.0.0:$PORT"
